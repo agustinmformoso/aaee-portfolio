@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('portfolio');
+Route::get('/{slug}', function ($slug) {
+    $user = User::with('skill')->with('education')->where('slug', $slug)->first();
+
+    if ($user) {
+        return view('portfolio')->with('user', $user);
+    } else {
+        return view('error');
+    }
 });
