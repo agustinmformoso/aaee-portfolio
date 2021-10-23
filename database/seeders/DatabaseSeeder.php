@@ -11,6 +11,7 @@ use App\Models\ProfessionalSkill;
 use App\Models\WorkExperience;
 use App\Models\Review;
 use App\Models\Pricing;
+use App\Models\Post;
 
 use Illuminate\Database\Seeder;
 
@@ -33,5 +34,6 @@ class DatabaseSeeder extends Seeder
         WorkExperience::factory(18)->create();
         Review::factory(18)->create();
         Pricing::factory(18)->create();
+        Post::factory(18)->create();
     }
 }

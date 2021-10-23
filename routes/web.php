@@ -15,7 +15,7 @@ use App\Models\User;
 */
 
 Route::get('/{slug}', function ($slug) {
-    $user = User::with('skill')->with('education')->with('service')->with('rrss')->with('project')->with('professionalSkill')->with('workExperience')->with('review')->with('pricing')->where('slug', $slug)->first();
+    $user = User::with('skill')->with('education')->with('service')->with('rrss')->with('project')->with('professionalSkill')->with('workExperience')->with('review')->with('pricing')->with('post')->where('slug', $slug)->first();
 
     if ($user) {
         return view('portfolio')->with('user', $user);

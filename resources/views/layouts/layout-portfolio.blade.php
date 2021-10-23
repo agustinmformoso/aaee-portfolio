@@ -487,54 +487,24 @@
                 <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <h3>Featured Posts</h3>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                        <img src="assets/images/b-3.png" alt="" class="img-fluid">
-                        <div class="blog-inner">
-                            <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
-                            <div class="mh-blog-post-info">
-                                <ul>
-                                    <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                    <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                </ul>
+                @foreach ($user->post as $post)
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="{{ asset('assets/images/' . $post->image) }}" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">{{ $post->date }}</a></li>
+                                        <li><strong>By</strong><a href="#">{{ $post->user }}</a></li>
+                                    </ul>
+                                </div>
+                                <p>{{ $post->content }}</p>
+                                <a href="{{ $post->url }}">Read More</a>
                             </div>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                            <a href="blog-single.html">Read More</a>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <img src="assets/images/b-2.png" alt="" class="img-fluid">
-                        <div class="blog-inner">
-                            <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                            <div class="mh-blog-post-info">
-                                <ul>
-                                    <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                    <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                </ul>
-                            </div>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                            <a href="blog-single.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                        <img src="assets/images/b-1.png" alt="" class="img-fluid">
-                        <div class="blog-inner">
-                            <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                            <div class="mh-blog-post-info">
-                                <ul>
-                                    <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                    <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                </ul>
-                            </div>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                            <a href="blog-single.html">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
