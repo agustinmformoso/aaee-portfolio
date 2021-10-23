@@ -4,6 +4,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Skill;
 use App\Models\Education;
+use App\Models\Service;
 
 use Illuminate\Database\Seeder;
 
@@ -19,5 +20,6 @@ class DatabaseSeeder extends Seeder
         User::factory(5)->create();
         Skill::factory(15)->create();
         Education::factory(18)->create();
+        Service::factory(18)->create();
     }
 }
