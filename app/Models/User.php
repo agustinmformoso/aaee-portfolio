@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\ProfessionalSkillsFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -60,5 +61,9 @@ class User extends Authenticatable
 
     public function project() {
         return $this->hasMany(Project::class, 'user_id', 'id');
+    }
+
+    public function professionalSkill() {
+        return $this->hasMany(ProfessionalSkill::class, 'user_id', 'id');
     }
 }

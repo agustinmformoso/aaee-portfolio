@@ -23,10 +23,10 @@ class ProjectFactory extends Factory
     {
         return [
             'user_id'     => rand(1,5),
-            'category' => $this->faker->name,
+            'category' => $this->faker->word,
             'image' => 'p-2.png',
-            'name' => $this->faker->name,
-            'caption' => $this->faker->name,
+            'name' => $this->faker->word,
+            'caption' => $this->faker->word,
             'description' => $this->faker->text,
             'quote' => $this->faker->sentence,
             'author' => $this->faker->name,
