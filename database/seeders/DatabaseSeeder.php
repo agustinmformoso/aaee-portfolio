@@ -9,6 +9,8 @@ use App\Models\Rrss;
 use App\Models\Project;
 use App\Models\ProfessionalSkill;
 use App\Models\WorkExperience;
+use App\Models\Review;
+use App\Models\Pricing;
 
 use Illuminate\Database\Seeder;
 
@@ -29,5 +31,7 @@ class DatabaseSeeder extends Seeder
         Project::factory(18)->create();
         ProfessionalSkill::factory(18)->create();
         WorkExperience::factory(18)->create();
+        Review::factory(18)->create();
+        Pricing::factory(18)->create();
     }
 }

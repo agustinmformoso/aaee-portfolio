@@ -454,51 +454,22 @@
                 <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                     <h3>Pricing Table</h3>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                        <i class="fa fa-calendar"></i>
-                        <h4>Full-time work</h4>
-                        <p>I am available for full time</p>
-                        <h5>$1500</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
+                @foreach ($user->pricing as $pricing)
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <i class="fa fa-calendar"></i>
+                            <h4>{{ $pricing->title_job }}</h4>
+                            <p>{{ $pricing->description }}</p>
+                            <h5>${{ $pricing->price }}</h5>
+                            <ul>
+                                @foreach (explode(',', $pricing->jobs) as $jobs)
+                                    <li>{{ $jobs }}</li>
+                                @endforeach
+                            </ul>
+                            <a href="#" class="btn btn-fill">Hire Me</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <i class="fa fa-file"></i>
-                        <h4>Fixed Price Project</h4>
-                        <p>I am available for fixed roles</p>
-                        <h5>$500</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                        <i class="fa fa-hourglass"></i>
-                        <h4>Hourley work</h4>
-                        <p>I am available for Hourley projets</p>
-                        <h5>$50</h5>
-                        <ul>
-                            <li>Web Development</li>
-                            <li>Advetising</li>
-                            <li>Game Development</li>
-                            <li>Music Writing</li>
-                        </ul>
-                        <a href="#" class="btn btn-fill">Hire Me</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -582,68 +553,16 @@
                     <h3>Client Reviews</h3>
                 </div>
                 <div class="col-sm-12 wow fadeInUp" id="mh-client-review" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
+                    @foreach ($user->review as $review)
+                        <div class="each-client-item">
+                            <div class="mh-client-item dark-bg black-shadow-1">
+                                <img src="{{ asset('assets/images/' . $review->image) }}" alt="" class="img-fluid">
+                                <p>{{ $review->quote }}</p>
+                                <h4>{{ $review->author }}</h4>
+                                <span>{{ $review->title_job }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
-
-                    <div class="each-client-item">
-                        <div class="mh-client-item dark-bg black-shadow-1">
-                            <img src="assets/images/c-1.png" alt="" class="img-fluid">
-                            <p>Absolute wonderful ! I am completely
-                                blown away.The very best.I was amazed
-                                at the quality</p>
-                            <h4>John Mike</h4>
-                            <span>CEO, Author.Inc</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

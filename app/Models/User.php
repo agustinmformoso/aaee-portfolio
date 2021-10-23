@@ -70,4 +70,12 @@ class User extends Authenticatable
     public function workExperience() {
         return $this->hasMany(WorkExperience::class, 'user_id', 'id');
     }
+
+    public function review() {
+        return $this->hasMany(Review::class, 'user_id', 'id');
+    }
+
+    public function pricing() {
+        return $this->hasMany(Pricing::class, 'user_id', 'id');
+    }
 }
