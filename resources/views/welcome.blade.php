@@ -20,7 +20,7 @@
         <!-- Google Font-->
         <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{ asset('assets/icons/font-awesome-4.7.0/css/font-awesome.min.cssassets/icons/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/icons/font-awesome-4.7.0/css/font-awesome.min.css') }}">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ asset('assets/plugins/css/bootstrap.min.css') }}">
         <!-- Animate CSS-->
@@ -1061,6 +1061,8 @@
     * JS Files *
     ==============
     -->
+
+    <!-- {{ asset('') }} -->
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     
