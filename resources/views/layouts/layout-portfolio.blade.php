@@ -222,8 +222,8 @@
                             <!-- Education Institutes-->
                             @foreach ($user->education as $education)
                                 <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                    <h4>{{ $education->degree}} <a href="#">{{ $education->school_name}}</a></h4>
-                                    <div class="mh-eduyear">{{ $education->start_date}}-{{ $education->finish_date}}</div>
+                                    <h4>{{ $education->degree}} <a href="#">{{ $education->school_name }}</a></h4>
+                                    <div class="mh-eduyear">{{ $education->start_date }}-{{ $education->finish_date }}</div>
                                     <p>{{ $education->description}}</p>
                                 </div>
                             @endforeach
@@ -235,36 +235,19 @@
                         <h3>Work Experience</h3>
                         <div class="mh-experience-deatils">
                             <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                <h4>UI/UX Designer <a href="#">IronSketch</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
-                            <!-- Education Institutes-->
-                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                <div class="mh-eduyear">2005-2008</div>
-                                <span>Responsibility :</span>
-                                <ul class="work-responsibility">
-                                    <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                    <li><i class="fa fa-circle"></i>Project Management</li>
-                                </ul>
-                            </div>
-                        </div>
+
+                            @foreach ($user->workExperience as $workExperience)
+                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                    <h4>{{ $workExperience->title_job }} <a href="#">{{ $workExperience->name }}</a></h4>
+                                    <div class="mh-eduyear">{{ $workExperience->start_date}}-{{ $workExperience->finish_date}}</div>
+                                    <span>Responsibility :</span>
+                                    <ul class="work-responsibility">
+                                        @foreach (explode(',', $workExperience->responsibility) as $responsibility)
+                                            <li><i class="fa fa-circle"></i>{{ $responsibility }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endforeach
                     </div>
                 </div>
             </div>

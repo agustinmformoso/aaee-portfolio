@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Rrss;
 use App\Models\Project;
 use App\Models\ProfessionalSkill;
+use App\Models\WorkExperience;
 
 use Illuminate\Database\Seeder;
 
@@ -27,5 +28,6 @@ class DatabaseSeeder extends Seeder
         Rrss::factory(18)->create();
         Project::factory(18)->create();
         ProfessionalSkill::factory(18)->create();
+        WorkExperience::factory(18)->create();
     }
 }
