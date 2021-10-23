@@ -6,6 +6,7 @@ use App\Models\Skill;
 use App\Models\Education;
 use App\Models\Service;
 use App\Models\Rrss;
+use App\Models\Project;
 
 use Illuminate\Database\Seeder;
 
@@ -23,5 +24,6 @@ class DatabaseSeeder extends Seeder
         Education::factory(18)->create();
         Service::factory(18)->create();
         Rrss::factory(18)->create();
+        Project::factory(18)->create();
     }
 }

@@ -57,4 +57,8 @@ class User extends Authenticatable
     public function rrss() {
         return $this->hasMany(Rrss::class, 'user_id', 'id');
     }
+
+    public function project() {
+        return $this->hasMany(Project::class, 'user_id', 'id');
+    }
 }
