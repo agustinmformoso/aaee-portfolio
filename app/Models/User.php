@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function service() {
         return $this->hasMany(Service::class, 'user_id', 'id');
     }
+
+    public function rrss() {
+        return $this->hasMany(Rrss::class, 'user_id', 'id');
+    }
 }
