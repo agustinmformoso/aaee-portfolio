@@ -30,7 +30,7 @@
 
                         <ul class="social-icon wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
                             @foreach ($user->rrss as $rrss)
-                                <li><a href="{{ $rrss->url }}"><i class="{{ $rrss->icon }}"></i></a></li>
+                            <li><a href="{{ $rrss->url }}"><i class="{{ $rrss->icon }}"></i></a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -67,7 +67,7 @@
                     <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <ul>
                             @foreach ($user->skill as $skill)
-                                <li><span>{{ $skill->name}}</span></li>
+                            <li><span>{{ $skill->name}}</span></li>
                             @endforeach
                         </ul>
                     </div>
@@ -89,15 +89,15 @@
             <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                 <h2>What I do</h2>
             </div>
-                @foreach ($user->service->slice(0, 3) as $service)
-                    <div class="col-sm-4 mt-4">
-                        <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <i class="{{ $service->icon }}"></i>
-                            <h3>{{ $service->name }}</h3>
-                            <p>{{ $service->description }}</p>
-                        </div>
-                    </div>
-                @endforeach
+            @foreach ($user->service->slice(0, 3) as $service)
+            <div class="col-sm-4 mt-4">
+                <div class="mh-service-item shadow-1 dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                    <i class="{{ $service->icon }}"></i>
+                    <h3>{{ $service->name }}</h3>
+                    <p>{{ $service->description }}</p>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -118,34 +118,34 @@
                     <div class="mh-single-project-slide-by-side row">
                         <!-- Project Items -->
                         @foreach ($user->project as $project)
-                            <div class="col-sm-12 mh-featured-item">
-                                <div class="row">
-                                    <div class="col-sm-7">
-                                        <div class="mh-featured-project-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                            <img src="{{ asset('assets/images/' . $project->image) }}" alt="" class="img-fluid">
-                                        </div>
+                        <div class="col-sm-12 mh-featured-item">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <div class="mh-featured-project-img shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                        <img src="{{ asset('assets/images/' . $project->image) }}" alt="" class="img-fluid">
                                     </div>
-                                    <div class="col-sm-5">
-                                        <div class="mh-featured-project-content">
-                                            <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ $project->category }}</h4>
-                                            <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">{{ $project->name }}</h2>
-                                            <span class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ $project->caption }}</span>
-                                            <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">{{ $project->description }}</p>
-                                            <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">View Details</a>
-                                            <div class="mh-testimonial mh-project-testimonial wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.9s">
-                                                <blockquote>
-                                                    <q>{{ $project->quote }}</q>
-                                                    <cite>- {{ $project->author }}</cite>
-                                                </blockquote>
-                                                <blockquote>
-                                                    <q>{{ $project->quote }}</q>
-                                                    <cite>- {{ $project->author }}</cite>
-                                                </blockquote>
-                                            </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="mh-featured-project-content">
+                                        <h4 class="project-category wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">{{ $project->category }}</h4>
+                                        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">{{ $project->name }}</h2>
+                                        <span class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">{{ $project->caption }}</span>
+                                        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">{{ $project->description }}</p>
+                                        <a href="#" class="btn btn-fill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">View Details</a>
+                                        <div class="mh-testimonial mh-project-testimonial wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.9s">
+                                            <blockquote>
+                                                <q>{{ $project->quote }}</q>
+                                                <cite>- {{ $project->author }}</cite>
+                                            </blockquote>
+                                            <blockquote>
+                                                <q>{{ $project->quote }}</q>
+                                                <cite>- {{ $project->author }}</cite>
+                                            </blockquote>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -164,7 +164,7 @@
         <div class="container">
             <div class="row section-separator">
                 <div class="section-title text-center col-sm-12">
-                    <!--<h2>Skills</h2>-->
+                    <h2>Skills</h2>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="mh-skills-inner">
@@ -172,17 +172,17 @@
                             <h3>Technical Skills</h3>
                             <div class="each-skills">
                                 @foreach ($user->skill as $skill)
-                                    <div class="candidatos">
-                                        <div class="parcial">
-                                            <div class="info">
-                                                <div class="nome">{{ $skill->name}}</div>
-                                                <div class="percentagem-num">{{ $skill->percent}}</div>
-                                            </div>
-                                            <div class="progressBar">
-                                                <div class="percentagem" style="width: {{ $skill->percent}}%;"></div>
-                                            </div>
+                                <div class="candidatos">
+                                    <div class="parcial">
+                                        <div class="info">
+                                            <div class="nome">{{ $skill->name}}</div>
+                                            <div class="percentagem-num">{{ $skill->percent}}</div>
+                                        </div>
+                                        <div class="progressBar">
+                                            <div class="percentagem" style="width: {{ $skill->percent}}%;"></div>
                                         </div>
                                     </div>
+                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -193,10 +193,10 @@
                         <h3>Professional Skills</h3>
                         <ul class="mh-professional-progress">
                             @foreach ($user->professionalSkill->slice(0, 6) as $professionalSkill)
-                                <li>
-                                    <div class="mh-progress mh-progress-circle" data-progress="{{ $professionalSkill->percent }}"></div>
-                                    <div class="pr-skill-name">{{ $professionalSkill->name }}</div>
-                                </li>
+                            <li>
+                                <div class="mh-progress mh-progress-circle" data-progress="{{ $professionalSkill->percent }}"></div>
+                                <div class="pr-skill-name">{{ $professionalSkill->name }}</div>
+                            </li>
                             @endforeach
                         </ul>
                     </div>
@@ -221,11 +221,11 @@
                         <div class="mh-education-deatils">
                             <!-- Education Institutes-->
                             @foreach ($user->education as $education)
-                                <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                    <h4>{{ $education->degree}} <a href="#">{{ $education->school_name }}</a></h4>
-                                    <div class="mh-eduyear">{{ $education->start_date }}-{{ $education->finish_date }}</div>
-                                    <p>{{ $education->description}}</p>
-                                </div>
+                            <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                                <h4>{{ $education->degree}} <a href="#">{{ $education->school_name }}</a></h4>
+                                <div class="mh-eduyear">{{ $education->start_date }}-{{ $education->finish_date }}</div>
+                                <p>{{ $education->description}}</p>
+                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -237,22 +237,22 @@
                             <!-- Education Institutes-->
 
                             @foreach ($user->workExperience as $workExperience)
-                                <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                    <h4>{{ $workExperience->title_job }} <a href="#">{{ $workExperience->name }}</a></h4>
-                                    <div class="mh-eduyear">{{ $workExperience->start_date}}-{{ $workExperience->finish_date}}</div>
-                                    <span>Responsibility :</span>
-                                    <ul class="work-responsibility">
-                                        @foreach (explode(',', $workExperience->responsibility) as $responsibility)
-                                            <li><i class="fa fa-circle"></i>{{ $responsibility }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                <h4>{{ $workExperience->title_job }} <a href="#">{{ $workExperience->name }}</a></h4>
+                                <div class="mh-eduyear">{{ $workExperience->start_date}}-{{ $workExperience->finish_date}}</div>
+                                <span>Responsibility :</span>
+                                <ul class="work-responsibility">
+                                    @foreach (explode(',', $workExperience->responsibility) as $responsibility)
+                                    <li><i class="fa fa-circle"></i>{{ $responsibility }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                             @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 <!--
@@ -455,20 +455,20 @@
                     <h3>Pricing Table</h3>
                 </div>
                 @foreach ($user->pricing as $pricing)
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <i class="fa fa-calendar"></i>
-                            <h4>{{ $pricing->title_job }}</h4>
-                            <p>{{ $pricing->description }}</p>
-                            <h5>${{ $pricing->price }}</h5>
-                            <ul>
-                                @foreach (explode(',', $pricing->jobs) as $jobs)
-                                    <li>{{ $jobs }}</li>
-                                @endforeach
-                            </ul>
-                            <a href="#" class="btn btn-fill">Hire Me</a>
-                        </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="mh-pricing dark-bg shadow-2 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <i class="fa fa-calendar"></i>
+                        <h4>{{ $pricing->title_job }}</h4>
+                        <p>{{ $pricing->description }}</p>
+                        <h5>${{ $pricing->price }}</h5>
+                        <ul>
+                            @foreach (explode(',', $pricing->jobs) as $jobs)
+                            <li>{{ $jobs }}</li>
+                            @endforeach
+                        </ul>
+                        <a href="#" class="btn btn-fill">Hire Me</a>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -488,22 +488,22 @@
                     <h3>Featured Posts</h3>
                 </div>
                 @foreach ($user->post as $post)
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="{{ asset('assets/images/' . $post->image) }}" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="#">{{ $post->date }}</a></li>
-                                        <li><strong>By</strong><a href="#">{{ $post->user }}</a></li>
-                                    </ul>
-                                </div>
-                                <p>{{ $post->content }}</p>
-                                <a href="{{ $post->url }}">Read More</a>
+                <div class="col-sm-12 col-md-4">
+                    <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                        <img src="{{ asset('assets/images/' . $post->image) }}" alt="" class="img-fluid">
+                        <div class="blog-inner">
+                            <h2><a href="{{ $post->url }}">{{ $post->title }}</a></h2>
+                            <div class="mh-blog-post-info">
+                                <ul>
+                                    <li><strong>Post On</strong><a href="#">{{ $post->date }}</a></li>
+                                    <li><strong>By</strong><a href="#">{{ $post->user }}</a></li>
+                                </ul>
                             </div>
+                            <p>{{ $post->content }}</p>
+                            <a href="{{ $post->url }}">Read More</a>
                         </div>
                     </div>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -524,14 +524,14 @@
                 </div>
                 <div class="col-sm-12 wow fadeInUp" id="mh-client-review" data-wow-duration="0.8s" data-wow-delay="0.3s">
                     @foreach ($user->review as $review)
-                        <div class="each-client-item">
-                            <div class="mh-client-item dark-bg black-shadow-1">
-                                <img src="{{ asset('assets/images/' . $review->image) }}" alt="" class="img-fluid">
-                                <p>{{ $review->quote }}</p>
-                                <h4>{{ $review->author }}</h4>
-                                <span>{{ $review->title_job }}</span>
-                            </div>
+                    <div class="each-client-item">
+                        <div class="mh-client-item dark-bg black-shadow-1">
+                            <img src="{{ asset('assets/images/' . $review->image) }}" alt="" class="img-fluid">
+                            <p>{{ $review->quote }}</p>
+                            <h4>{{ $review->author }}</h4>
+                            <span>{{ $review->title_job }}</span>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>
