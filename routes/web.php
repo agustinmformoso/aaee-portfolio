@@ -23,3 +23,7 @@ Route::get('/{slug}', function ($slug) {
         return abort(404,'Page not found');
     }
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

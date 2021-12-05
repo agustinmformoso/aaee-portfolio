@@ -7,11 +7,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use HasProfilePhoto;
+    use Notifiable;
+    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -32,6 +38,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
 
     /**
@@ -42,44 +50,63 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
-    public function skill() {
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    public function skill()
+    {
         return $this->hasMany(Skill::class, 'user_id', 'id');
     }
 
-    public function education() {
+    public function education()
+    {
         return $this->hasMany(Education::class, 'user_id', 'id');
     }
 
-    public function service() {
+    public function service()
+    {
         return $this->hasMany(Service::class, 'user_id', 'id');
     }
 
-    public function rrss() {
+    public function rrss()
+    {
         return $this->hasMany(Rrss::class, 'user_id', 'id');
     }
 
-    public function project() {
+    public function project()
+    {
         return $this->hasMany(Project::class, 'user_id', 'id');
     }
 
-    public function professionalSkill() {
+    public function professionalSkill()
+    {
         return $this->hasMany(ProfessionalSkill::class, 'user_id', 'id');
     }
 
-    public function workExperience() {
+    public function workExperience()
+    {
         return $this->hasMany(WorkExperience::class, 'user_id', 'id');
     }
 
-    public function review() {
+    public function review()
+    {
         return $this->hasMany(Review::class, 'user_id', 'id');
     }
 
-    public function pricing() {
+    public function pricing()
+    {
         return $this->hasMany(Pricing::class, 'user_id', 'id');
     }
 
-    public function post() {
+    public function post()
+    {
         return $this->hasMany(Post::class, 'user_id', 'id');
     }
 }
