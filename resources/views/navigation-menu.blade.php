@@ -16,7 +16,7 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ url('/user') }}" :active="request()->routeIs('dashboard')">
-                        User
+                        Usuario
                     </x-jet-nav-link>
                 </div>
             </div>
