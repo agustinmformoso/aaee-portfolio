@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UserRequest;
 
+
+
 class UserController extends Controller
 {
     /**
@@ -30,6 +32,7 @@ class UserController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -74,7 +77,6 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, User $user)
     {
-
         if ($request->file('file')) {
             Storage::disk('public')->delete($user->image);
             $user->image = $request->file('file')->store('users', 'public');
@@ -104,6 +106,11 @@ class UserController extends Controller
         return redirect()->to('user');
     }
 
+    /**
+     * Logout user.
+     *
+     *
+     */
     public function logout_user()
     {
         Auth::logout();

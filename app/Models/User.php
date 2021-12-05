@@ -27,8 +27,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'title_job',
         'email',
         'password',
+        'image',
+        'tel',
+        'address'
     ];
 
     /**
@@ -109,5 +113,19 @@ class User extends Authenticatable
     public function post()
     {
         return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
+
+    public function getGetImageAttribute($key)
+    {
+        if ($this->image) {
+            return url('storage/$this->image');
+        }
+    }
+
+    public function getUppercaseAttribute($key)
+    {
+
+        return strtoupper($this->name);
     }
 }

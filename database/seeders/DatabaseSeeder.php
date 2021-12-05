@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use App\Models\User;
 use App\Models\Skill;
 use App\Models\Education;
@@ -24,7 +25,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(5)->create();
+        User::factory(5)->create()->each(function ($user) {
+            $user->assignRole('client');
+        });
         Skill::factory(15)->create();
         Education::factory(18)->create();
         Service::factory(18)->create();

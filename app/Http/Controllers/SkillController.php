@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Skill;
 use Illuminate\Http\Request;
+
 
 class SkillController extends Controller
 {
@@ -34,7 +36,17 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $skill = Skill::create([
+            'name' => $data['name'],
+            'user_id' => intval($data['user_id']),
+            'percent' => 50
+        ]);
+
+        $skill->save();
+
+        return redirect()->to('user/' . $data['user_id'] . '/edit')->with('status', 'Habilidad Creada con Exito');
     }
 
     /**
@@ -66,9 +78,12 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Skill $skill)
     {
-        //
+
+        $skill->update($request->all());
+
+        return redirect()->to('user/' . $skill->user_id . '/edit')->with('status', 'Habilidad Modificada con Exito');
     }
 
     /**
@@ -77,8 +92,13 @@ class SkillController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Skill $skill)
     {
-        //
+        $id = $skill->user_id;
+
+        $skill = Skill::find($skill->id);
+        $skill->delete();
+
+        return redirect()->to('user/' . $id . '/edit')->with('danger', 'Habilidad Borrada');;
     }
 }
