@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\RrssController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
@@ -60,6 +61,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         Route::post('/actions/create-skill', [SkillController::class, 'storeUser']);
         Route::put('skill/{skill}', [SkillController::class, 'updateUser'])->name('skill.updateUser');
         Route::delete('/actions/{id}/delete-skill', [SkillController::class, 'destroyUser']);
+
+        Route::put('service/{service}', [ServiceController::class, 'update'])->name('service.update');
 
         Route::get('my-portfolio', function () {
             return view('my-portfolio');

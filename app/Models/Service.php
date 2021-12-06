@@ -8,7 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     use HasFactory;
-    
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'icon',
+        'name',
+        'description',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);

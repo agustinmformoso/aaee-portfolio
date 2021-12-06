@@ -183,7 +183,7 @@
                 <button class="nav-link border bg-dark text-white" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Redes Sociales</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link border bg-dark text-white" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">About</button>
+                <button class="nav-link border bg-dark text-white" id="servicios-tab" data-bs-toggle="tab" data-bs-target="#servicios" type="button" role="tab" aria-controls="servicios" aria-selected="false">Servicios</button>
             </li>
         </ul>
         <div class="tab-content border border-top-0 rounded-bottom border-white p-4" id="myTabContent">
@@ -281,9 +281,45 @@
                 </form>
                 @endif
             </div>
+            <div class="tab-pane fade text-white" id="servicios" role="tabpanel" aria-labelledby="servicios-tab">
+                <h4 class="text-center mt-1">Servicios</h4>
+                @foreach ($user->service as $service)
+                <form action="{{ route('service.update', $service) }}" method="POST">
+                    <div class="row d-flex p-2">
+                        <div class="col-6 d-flex">
+                            <div class="w-100 text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Servicio
+                                </label>
+                                <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $service->name) }}">
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex">
+                            <div class="w-100 text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Descripción
+                                </label>
+                                <input id="description" type="text" name="description" class="form-control" value="{{ old('description', $service->description) }}">
+                            </div>
+                        </div>
+                    </div>
+                    @csrf
+                    @method('PUT')
+                    <div class="col-12 d-flex justify-content-center align-items-end py-3">
+                        <button class="bg-primary text-white btn btn-md w-50" type="submit" class="site-btn">Actualizar</button>
+                    </div>
+                </form>
+
+                <form method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <div class="col-12 d-flex justify-content-center align-items-end">
+                        <button class="bg-danger text-white btn btn-md w-50" type="submit" class="site-btn">Eliminar</button>
+                    </div>
+                </form>
+                @endforeach
+            </div>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-    </div>
     </div>
 </section>
 
