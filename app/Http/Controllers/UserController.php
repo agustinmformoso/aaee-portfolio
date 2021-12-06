@@ -100,6 +100,28 @@ class UserController extends Controller
     }
 
     /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateUser(Request $request)
+    {
+        $user = $request->user();
+
+        if ($request->file('file')) {
+            Storage::disk('public')->delete($user->image);
+            $user->image = $request->file('file')->store('users', 'public');
+            $user->save();
+        }
+
+        $user->update($request->all());
+
+        return redirect()->to('actions');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

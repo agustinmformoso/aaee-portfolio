@@ -14,8 +14,7 @@
             {{ session('danger') }}
         </div>
         @endif
-        <form a enctype="multipart/form-data" method="POST">
-
+        <form action="{{ route('user.update', $user) }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <div class="col-md-8">
                     <div class="row">
@@ -25,7 +24,7 @@
                             </label>
                             <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
                             @error('name')
-                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6 my-2">
@@ -34,7 +33,7 @@
                             </label>
                             <input id="title_job" type="text" name="title_job" class="form-control" value="{{ old('title_job', $user->title_job) }}">
                             @error('title_job')
-                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6 my-2">
@@ -43,7 +42,7 @@
                             </label>
                             <input id="tel" type="text" name="tel" class="form-control" value="{{ old('tel', $user->tel) }}">
                             @error('tel')
-                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="col-md-6 my-2">
@@ -52,7 +51,7 @@
                             </label>
                             <input id="address" type="text" name="address" class="form-control" value="{{ old('address', $user->address) }}">
                             @error('address')
-                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
@@ -75,10 +74,9 @@
                 </div>
             </div>
 
-            @csrf
-            @method('PUT')
-
             <div class="d-flex justify-content-center">
+                @csrf
+                @method('PUT')
                 <button type="submit" class="btn btn-block btn-primary site-btn w-50 mt-2 m-auto">Guardar Cambios</button>
             </div>
         </form>

@@ -1,4 +1,4 @@
-<form action="{{ route('skill.store') }}" method="POST">
+<form action="{{ url('/actions/create-skill') }}" method="POST">
     <div class="row d-flex">
         <div class="col-8 d-flex justify-content-center">
             <div class="w-75 text-white">
