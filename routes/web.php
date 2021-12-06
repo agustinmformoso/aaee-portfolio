@@ -62,6 +62,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         Route::put('skill/{skill}', [SkillController::class, 'updateUser'])->name('skill.updateUser');
         Route::delete('/actions/{id}/delete-skill', [SkillController::class, 'destroyUser']);
 
+        Route::post('/actions/create-service', [ServiceController::class, 'store']);
         Route::put('service/{service}', [ServiceController::class, 'update'])->name('service.update');
 
         Route::get('my-portfolio', function () {

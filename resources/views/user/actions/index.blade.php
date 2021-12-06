@@ -283,10 +283,55 @@
             </div>
             <div class="tab-pane fade text-white" id="servicios" role="tabpanel" aria-labelledby="servicios-tab">
                 <h4 class="text-center mt-1">Servicios</h4>
+
+                <h5 class="text-center mt-1">Agregar</h5>
+
+                <form action="{{ url('/actions/create-service') }}" method="POST">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Ícono
+                                </label>
+                                <select id="icon" name="icon" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option value="fa fa-bullseye purple-color">Bullseye Icon</option>
+                                    <option value="fa fa-code iron-color">Code Icon</option>
+                                    <option value="fa fa-object-ungroup sky-colorr">Object Ungroup Icon</option>
+                                </select>
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Servicio
+                                </label>
+                                <input id="name" type="text" name="name" class="form-control" placeholder="Servicio">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Descripción
+                                </label>
+                                <input id="description" type="text" name="description" class="form-control" placeholder="Descripción">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            @csrf
+                            <button class="bg-success text-white btn btn-lg w-100 " type="submit" class="site-btn">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+
+                <h5 class="text-center mt-2">Editar</h5>
+
                 @foreach ($user->service as $service)
                 <form action="{{ route('service.update', $service) }}" method="POST">
                     <div class="row d-flex p-2">
-                        <div class="col-6 d-flex">
+                        <div class="col-4 d-flex">
                             <div class="w-100 text-white">
                                 <label class="text-gray-700 text-sm font-bold mb-2">
                                     Ícono
@@ -298,7 +343,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-6 d-flex">
+                        <div class="col-4 d-flex">
                             <div class="w-100 text-white">
                                 <label class="text-gray-700 text-sm font-bold mb-2">
                                     Servicio
@@ -306,7 +351,7 @@
                                 <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $service->name) }}">
                             </div>
                         </div>
-                        <div class="col-6 d-flex">
+                        <div class="col-4 d-flex">
                             <div class="w-100 text-white">
                                 <label class="text-gray-700 text-sm font-bold mb-2">
                                     Descripción

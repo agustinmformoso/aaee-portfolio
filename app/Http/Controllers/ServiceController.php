@@ -36,6 +36,18 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $data = $request->all();
+
+        $service = Service::create([
+            'icon' => $data['icon'],
+            'user_id' => intval($data['user_id']),
+            'name' => $data['name'],
+            'description' => $data['description'],
+        ]);
+
+        $service->save();
+
+        return redirect()->to('actions')->with('status', 'Servicio creado con exito');
     }
 
     /**
