@@ -33,9 +33,9 @@ Route::get('logout-user', UserController::class . '@logout_user')->name('logout-
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::group(['middleware' => ['role:admin']], function () {
 
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+        Route::get('/admin-dashboard', function () {
+            return view('admin.admin-dashboard');
+        })->name('admin-dashboard');
 
         Route::resource('user', UserController::class)->except([
             'show'
@@ -48,6 +48,12 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
 
     Route::group(['middleware' => ['role:client']], function () {
+
+        Route::get('/user-dashboard', function () {
+            return view('user.user-dashboard');
+        })->name('user-dashboard');
+
+        Route::get('/actions', [UserController::class, 'editUser']);
 
         Route::get('my-portfolio', function () {
 

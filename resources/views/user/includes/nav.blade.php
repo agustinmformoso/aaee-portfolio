@@ -10,7 +10,7 @@
                     <a class="nav-link active" aria-current="page" href="">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/user')  }}">Editar Usuarios</a>
+                    <a class="nav-link" href="{{ url('/actions')  }}">Editar Mi Portfolio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout-user') }}" tabindex="-1">Logout</a>

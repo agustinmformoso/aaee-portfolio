@@ -68,10 +68,10 @@ return [
 
         //or if you have a bunch of redirection options
         if (Auth::user()->hasRole('admin')) {
-            return route('dashboard');
+            return url('admin-dashboard');
         }
         if (Auth::user()->hasRole('client')) {
-            return route('my-portfolio');
+            return route('user-dashboard');
         } else {
             return route('guest.dashboard');
         }
