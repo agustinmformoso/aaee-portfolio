@@ -62,7 +62,7 @@ class SkillController extends Controller
         $skill = Skill::create([
             'name' => $data['name'],
             'user_id' => intval($data['user_id']),
-            'percent' => 50
+            'percent' => $data['percent']
         ]);
 
         $skill->save();

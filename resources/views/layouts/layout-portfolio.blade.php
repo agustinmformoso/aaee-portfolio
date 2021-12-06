@@ -62,7 +62,7 @@
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="mh-about-inner">
-                    <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">About Me</h2>
+                    <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">{{ $user->about_me_title}}</h2>
                     <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ $user->excerpt}}</p>
                     <div class="mh-about-tag wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                         <ul>
@@ -87,7 +87,7 @@
     <div class="container">
         <div class="row section-separator">
             <div class="col-sm-12 text-center section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                <h2>What I do</h2>
+                <h2>{{ $user->what_i_do_title}}</h2>
             </div>
             @foreach ($user->service->slice(0, 3) as $service)
             <div class="col-sm-4 mt-4">
@@ -169,7 +169,7 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="mh-skills-inner">
                         <div class="mh-professional-skill wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <h3>Technical Skills</h3>
+                            <h3>{{ $user->techical_skills_title}}</h3>
                             <div class="each-skills">
                                 @foreach ($user->skill as $skill)
                                 <div class="candidatos">
@@ -190,7 +190,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="mh-professional-skills wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                        <h3>Professional Skills</h3>
+                        <h3>{{ $user->professional_skills_title}}</h3>
                         <ul class="mh-professional-progress">
                             @foreach ($user->professionalSkill->slice(0, 6) as $professionalSkill)
                             <li>
@@ -217,7 +217,7 @@
             <div class="row section-separator">
                 <div class="col-sm-12 col-md-6">
                     <div class="mh-education">
-                        <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
+                        <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">{{ $user->education_title}}</h3>
                         <div class="mh-education-deatils">
                             <!-- Education Institutes-->
                             @foreach ($user->education as $education)
@@ -232,7 +232,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="mh-work">
-                        <h3>Work Experience</h3>
+                        <h3>{{ $user->work_experience_title}}</h3>
                         <div class="mh-experience-deatils">
                             <!-- Education Institutes-->
 

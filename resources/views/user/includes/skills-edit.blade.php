@@ -1,12 +1,20 @@
 @foreach ($user->skill as $skill)
 <form action="{{ route('skill.updateUser', $skill) }}" method="POST">
-    <div class="row d-flex">
-        <div class="col-12 d-flex justify-content-center">
-            <div class="w-75 text-white">
+    <div class="row d-flex p-2">
+        <div class="col-6 d-flex">
+            <div class="w-100 text-white">
                 <label class="text-gray-700 text-sm font-bold mb-2">
-                    Habilidades
+                    Skill
                 </label>
                 <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $skill->name) }}">
+            </div>
+        </div>
+        <div class="col-6 d-flex">
+            <div class="w-100 text-white">
+                <label class="text-gray-700 text-sm font-bold mb-2">
+                    Porcentaje
+                </label>
+                <input id="percent" type="text" name="percent" class="form-control" value="{{ old('percent', $skill->percent) }}">
             </div>
         </div>
     </div>

@@ -30,6 +30,12 @@ class CreateUsersTable extends Migration
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
+            $table->string('about_me_title')->nullable();
+            $table->string('what_i_do_title')->nullable();
+            $table->string('techical_skills_title')->nullable();
+            $table->string('professional_skills_title')->nullable();
+            $table->string('education_title')->nullable();
+            $table->string('work_experience_title')->nullable();
         });
     }
 

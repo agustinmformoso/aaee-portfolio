@@ -64,6 +64,63 @@
                             <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
+
+                        <h4 class="text-center mt-1">Customizar Títulos</h4>
+
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                About Me
+                            </label>
+                            <input id="about_me_title" type="text" name="about_me_title" class="form-control" value="{{ old('about_me_title', $user->about_me_title) }}">
+                            @error('about_me_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                What I Do
+                            </label>
+                            <input id="what_i_do_title" type="text" name="what_i_do_title" class="form-control" value="{{ old('what_i_do_title', $user->what_i_do_title) }}">
+                            @error('what_i_do_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Technical Skills
+                            </label>
+                            <input id="techical_skills_title" type="text" name="techical_skills_title" class="form-control" value="{{ old('techical_skills_title', $user->techical_skills_title) }}">
+                            @error('techical_skills_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Professional Skills
+                            </label>
+                            <input id="professional_skills_title" type="text" name="professional_skills_title" class="form-control" value="{{ old('professional_skills_title', $user->professional_skills_title) }}">
+                            @error('professional_skills_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Education
+                            </label>
+                            <input id="education_title" type="text" name="education_title" class="form-control" value="{{ old('education_title', $user->education_title) }}">
+                            @error('education_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Work Experience
+                            </label>
+                            <input id="work_experience_title" type="text" name="work_experience_title" class="form-control" value="{{ old('work_experience_title', $user->work_experience_title) }}">
+                            @error('work_experience_title')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
 
                 </div>
@@ -120,6 +177,7 @@
                             @include('user.includes.skills-create')
                         </div>
                         <div class="tab-pane fade" id="v-pills-edit" role="tabpanel" aria-labelledby="v-pills-edit-tab">
+                            <h3 class="text-white text-center">Editar Habilidades</h3>
                             @include('user.includes.skills-edit')
                         </div>
                     </div>
