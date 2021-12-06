@@ -12,7 +12,7 @@
             {{ session('danger') }}
         </div>
         @endif
-        <form action="{{ route('user.update', $user) }}" enctype="multipart/form-data" method="POST">
+        <form a enctype="multipart/form-data" method="POST">
 
             <div class="row">
                 <div class="col-md-4">
