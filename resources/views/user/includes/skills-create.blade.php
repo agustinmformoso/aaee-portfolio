@@ -1,7 +1,7 @@
 <form action="{{ route('skill.store') }}" method="POST">
     <div class="row d-flex">
         <div class="col-8 d-flex justify-content-center">
-            <div class="w-75">
+            <div class="w-75 text-white">
                 <label class="text-gray-700 text-sm font-bold mb-2">
                     Nueva Habilidad
                 </label>

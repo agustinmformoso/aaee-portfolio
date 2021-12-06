@@ -1,8 +1,8 @@
 @extends('user.layouts.user')
 
 @section('main-content')
-<div class="col-12 bg-dark">
-    <h2 class="text-center mt-2 text-uppercase">Editar Mi Portfolio</h2>
+<div class="col-12 bg-dark text-white">
+    <h2 class="text-center text-uppercase py-2">Editar Mi Portfolio</h2>
 
     <div class="p-4">
         @if (session('succes'))
@@ -82,7 +82,7 @@
     </div>
 </div>
 
-<section class="container fluid p-4 bg-dark">
+<section class="container-fluid p-4 bg-dark">
     <div class="col-12">
         <ul class="nav nav-tabs bg-dark" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -99,7 +99,7 @@
             <div class="tab-pane fade show active" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                 <div class="d-flex align-items-start">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="btn btn-block btn-primary  active mb-4" id="v-pills-new-tab" data-bs-toggle="pill" data-bs-target="#v-pills-new" type="button" role="tab" aria-controls="v-pills-new" aria-selected="true">Agregar Habilidad</button>
+                        <button class="btn btn-block btn-primary active mb-4" id="v-pills-new-tab" data-bs-toggle="pill" data-bs-target="#v-pills-new" type="button" role="tab" aria-controls="v-pills-new" aria-selected="true">Agregar Habilidad</button>
                         <button class="btn btn-block btn-primary " id="v-pills-edit-tab" data-bs-toggle="pill" data-bs-target="#v-pills-edit" type="button" role="tab" aria-controls="v-pills-edit" aria-selected="false">Editar Habilidades</button>
                     </div>
                     <div class="tab-content w-100" id="v-pills-tabContent">
