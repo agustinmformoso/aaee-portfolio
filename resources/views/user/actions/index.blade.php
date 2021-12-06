@@ -289,6 +289,18 @@
                         <div class="col-6 d-flex">
                             <div class="w-100 text-white">
                                 <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Ícono
+                                </label>
+                                <select id="icon" name="icon" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                    <option value="fa fa-bullseye purple-color">Bullseye Icon</option>
+                                    <option value="fa fa-code iron-color">Code Icon</option>
+                                    <option value="fa fa-object-ungroup sky-colorr">Object Ungroup Icon</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 d-flex">
+                            <div class="w-100 text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
                                     Servicio
                                 </label>
                                 <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $service->name) }}">
