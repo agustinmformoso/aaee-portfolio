@@ -116,6 +116,12 @@ class UserController extends Controller
             $user->save();
         }
 
+        if ($request->file('file_about')) {
+            Storage::disk('public')->delete($user->about_me_image);
+            $user->about_me_image = $request->file('file_about')->store('users', 'public');
+            $user->save();
+        }
+
         $user->update($request->all());
 
         return redirect()->to('actions');

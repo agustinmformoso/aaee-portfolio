@@ -64,6 +64,15 @@
                             <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Resumen
+                            </label>
+                            <input id="excerpt" type="text" name="excerpt" class="form-control" value="{{ old('excerpt', $user->excerpt) }}">
+                            @error('excerpt')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
 
                         <h4 class="text-center mt-1">Customizar Títulos</h4>
 
@@ -122,11 +131,11 @@
                             @enderror
                         </div>
                     </div>
-
                 </div>
 
                 <div class="col-md-4">
                     <div class="row">
+                        <h5 class="text-white text-center">Foto de Perfil</h5>
                         <div class="col-md-12 my-2 d-flex flex-wrap flex-column justify-content-center align-items-center">
                             @if ($user->image)
                             <img class="img-fluid rounded mb-2" src="{{asset('storage/'.$user->image)}}" alt="{{ $user->name }}">
@@ -134,6 +143,18 @@
                             <img class="img-fluid rounded mb-2" src="https://picsum.photos/400/200" alt="Card image cap">
                             @endif
                             <input type="file" name="file">
+                            @error('file')
+                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <h5 class="text-white text-center">Foto About Me</h5>
+                        <div class="col-md-12 my-2 d-flex flex-wrap flex-column justify-content-center align-items-center">
+                            @if ($user->about_me_image)
+                            <img class="img-fluid rounded mb-2" src="{{asset('storage/'.$user->about_me_image)}}" alt="{{ $user->name }}">
+                            @else
+                            <img class="img-fluid rounded mb-2" src="https://picsum.photos/400/200" alt="Card image cap">
+                            @endif
+                            <input type="file" name="file_about">
                             @error('file')
                             <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
                             @enderror
