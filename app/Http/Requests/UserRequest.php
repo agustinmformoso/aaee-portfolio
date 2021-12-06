@@ -26,9 +26,10 @@ class UserRequest extends FormRequest
         return [
             'name'          => 'required | min:5 | max:64',
             'title_job'     => 'required | min:5 | max:64',
+            'welcome_greeting'     => 'required | min:5 | max:64',
             'tel'           => 'required | numeric | min:6',
             'address'       => 'required | min:10 | max:128',
-            'file'          => 'image:jpg | dimensions:min_width=100,min_height=200 | size:512',
+            'file'          => 'image:jpg | dimensions:min_width=100,min_height=200',
         ];
     }
 }

@@ -51,7 +51,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         })->name('user-dashboard');
 
         Route::get('/actions', [UserController::class, 'editUser']);
-        Route::put('/actions/{id}/update', [UserController::class, 'update']);
+        Route::put('/actions/{id}/update', [UserController::class, 'updateUser']);
 
         Route::post('/actions/create-skill', [SkillController::class, 'storeUser']);
         Route::put('skill/{skill}', [SkillController::class, 'updateUser'])->name('skill.updateUser');

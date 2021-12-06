@@ -21,6 +21,15 @@
                     <div class="row">
                         <div class="col-md-6 my-2">
                             <label class="text-gray-700 text-sm font-bold mb-2">
+                                Mensaje de bienvenida
+                            </label>
+                            <input id="welcome_greeting" type="text" name="welcome_greeting" class="form-control" value="{{ old('welcome_greeting', $user->welcome_greeting) }}">
+                            @error('welcome_greeting')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
                                 Nombres
                             </label>
                             <input id="name" type="text" name="name" class="form-control" value="{{ old('name', $user->name) }}">
@@ -63,7 +72,7 @@
                     <div class="row">
                         <div class="col-md-12 my-2 d-flex flex-wrap flex-column justify-content-center align-items-center">
                             @if ($user->image)
-                            <img class="img-fluid rounded mb-2" src="{{ $user->get_image }}" alt="{{ $user->name }}">
+                            <img class="img-fluid rounded mb-2" src="{{asset('storage/'.$user->image)}}" alt="{{ $user->name }}">
                             @else
                             <img class="img-fluid rounded mb-2" src="https://picsum.photos/400/200" alt="Card image cap">
                             @endif
