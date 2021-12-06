@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RrssController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Http\Controllers\UserController;
@@ -52,6 +53,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
         Route::get('/actions', [UserController::class, 'editUser']);
         Route::put('/actions/{id}/update', [UserController::class, 'updateUser']);
+
+        Route::put('rrss/{rrss}', [RrssController::class, 'update'])->name('rrss.update');
+        Route::post('/rrss/create-rrss', [RrssController::class, 'store']);
 
         Route::post('/actions/create-skill', [SkillController::class, 'storeUser']);
         Route::put('skill/{skill}', [SkillController::class, 'updateUser'])->name('skill.updateUser');

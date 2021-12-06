@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         Skill::factory(15)->create();
         Education::factory(18)->create();
         Service::factory(18)->create();
-        Rrss::factory(18)->create();
+        Rrss::factory(1)->create();
         Project::factory(18)->create();
         ProfessionalSkill::factory(18)->create();
         WorkExperience::factory(18)->create();

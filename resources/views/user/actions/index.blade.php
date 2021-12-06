@@ -159,10 +159,10 @@
                 <button class="nav-link border bg-dark text-white active" id="skills-tab" data-bs-toggle="tab" data-bs-target="#skills" type="button" role="tab" aria-controls="skills" aria-selected="true">Skills</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link border bg-dark text-white" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                <button class="nav-link border bg-dark text-white" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Redes Sociales</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link border bg-dark text-white" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                <button class="nav-link border bg-dark text-white" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">About</button>
             </li>
         </ul>
         <div class="tab-content border border-top-0 rounded-bottom border-white p-4" id="myTabContent">
@@ -183,9 +183,86 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            <div class="tab-pane fade text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <h4 class="text-center mt-1">Redes sociales</h4>
+
+                @if ($user->rrss)
+                <form action="{{ route('rrss.update', $user->rrss) }}" method="POST">
+                    <div class="row">
+                        <div class="col-md-4 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Facebook
+                            </label>
+                            <input id="facebook_url" type="text" name="facebook_url" class="form-control" value="{{ old('facebook_url', $user->rrss->facebook_url) }}">
+                            @error('facebook_url')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Twitter
+                            </label>
+                            <input id="twitter_url" type="text" name="twitter_url" class="form-control" value="{{ old('twitter_url', $user->rrss->twitter_url) }}">
+                            @error('twitter_url')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="text-gray-700 text-sm font-bold mb-2">
+                                Github
+                            </label>
+                            <input id="github_url" type="text" name="github_url" class="form-control" value="{{ old('github_url', $user->rrss->github_url) }}">
+                            @error('github_url')
+                            <div class="bg-danger w-100 p-3 text-white mt-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
+                    </div>
+                    @csrf
+                    @method('PUT')
+                    <button class="bg-primary text-white btn btn-lg w-100 mt-2" type="submit" class="site-btn">Agregar</button>
+                </form>
+                @else
+                <form action="{{ url('/rrss/create-rrss') }}" method="POST">
+                    <h3 class="text-white text-center">Nueva Habilidad</h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Facebook
+                                </label>
+                                <input id="facebook_url" type="text" name="facebook_url" class="form-control" placeholder="Facebook">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Twitter
+                                </label>
+                                <input id="twitter_url" type="text" name="twitter_url" class="form-control" placeholder="Twitter">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-white">
+                                <label class="text-gray-700 text-sm font-bold mb-2">
+                                    Github
+                                </label>
+                                <input id="github_url" type="text" name="github_url" class="form-control" placeholder="Github">
+                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            </div>
+                        </div>
+                        @csrf
+                        <div class="col-md-12">
+                            <button class="bg-primary text-white btn btn-lg w-100 mt-2" type="submit" class="site-btn">Agregar</button>
+                        </div>
+                    </div>
+                </form>
+                @endif
+            </div>
         </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+    </div>
     </div>
 </section>
 

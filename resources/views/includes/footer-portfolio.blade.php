@@ -82,11 +82,13 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
+                                            @if ($user->rrss)
                                             <ul class="social-icon">
-                                                @foreach ($user->rrss as $rrss)
-                                                    <li><a href="{{ $rrss->url }}"><i class="{{ $rrss->icon }}"></i></a></li>
-                                                @endforeach
+                                                <li><a href="{{ $user->rrss->facebook_url }}"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="{{ $user->rrss->twitter_url }}"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="{{ $user->rrss->github_url }}"><i class="fa fa-github"></i></a></li>
                                             </ul>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

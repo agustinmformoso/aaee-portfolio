@@ -22,9 +22,10 @@ class RrssFactory extends Factory
     public function definition()
     {
         return [
-            'user_id'     => rand(1,5),
-            'icon' => $this->faker->randomElement((['fa fa-facebook', 'fa fa-twitter', 'fa fa-github', 'fa fa-dribbble'])),
-            'url' => '#',
+            'user_id'     => '2',
+            'facebook_url'     => '#',
+            'twitter_url'     => '#',
+            'github_url'     => '#',
         ];
     }
 }

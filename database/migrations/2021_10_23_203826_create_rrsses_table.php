@@ -16,8 +16,9 @@ class CreateRrssesTable extends Migration
         Schema::create('rrsses', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('icon')->nullable();
-            $table->string('url')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->string('twitter_url')->nullable();
+            $table->string('github_url')->nullable();
             $table->timestamps();
         });
     }
