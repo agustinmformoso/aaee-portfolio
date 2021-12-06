@@ -55,19 +55,22 @@
                             @enderror
                         </div>
                     </div>
+
                 </div>
 
                 <div class="col-md-4">
-                    <div class="col-md-12 my-2 d-flex flex-column justify-content-center align-items-center">
-                        @if ($user->image)
-                        <img class="img-fluid rounded mb-2" src="{{ $user->get_image }}" alt="{{ $user->name }}">
-                        @else
-                        <img class="img-fluid rounded mb-2" src="https://picsum.photos/400/200" alt="Card image cap">
-                        @endif
-                        <input type="file" name="file">
-                        @error('file')
-                        <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
-                        @enderror
+                    <div class="row">
+                        <div class="col-md-12 my-2 d-flex flex-wrap flex-column justify-content-center align-items-center">
+                            @if ($user->image)
+                            <img class="img-fluid rounded mb-2" src="{{ $user->get_image }}" alt="{{ $user->name }}">
+                            @else
+                            <img class="img-fluid rounded mb-2" src="https://picsum.photos/400/200" alt="Card image cap">
+                            @endif
+                            <input type="file" name="file">
+                            @error('file')
+                            <div class="bg-danger w-100 p-3 text-white m-2 rounded-3">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
                 </div>
             </div>

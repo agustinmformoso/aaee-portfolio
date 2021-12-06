@@ -48,7 +48,6 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
 
 
     Route::group(['middleware' => ['role:client']], function () {
-
         Route::get('/user-dashboard', function () {
             return view('user.user-dashboard');
         })->name('user-dashboard');

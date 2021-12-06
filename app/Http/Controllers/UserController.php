@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\UserRequest;
 
-
-
 class UserController extends Controller
 {
     /**
@@ -74,8 +72,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function editUser(User $user)
+    public function editUser(Request $request)
     {
+        $user = $request->user();
+
         return view('user.actions.index', compact('user'));
     }
 
